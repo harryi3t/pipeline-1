@@ -1,0 +1,12 @@
+jobs:
+  - name: pipe-1-job-1
+    type: runSh
+    flags:
+      - pipe-1
+      - job-1
+      - job
+    steps:
+        - IN: pipe-1-repo-1
+        - OUT: pipe-1-repo-2
+        - TASK:
+            - script: sudo apt-get install -y jq

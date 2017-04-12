@@ -1,0 +1,22 @@
+resources:
+  - name: pipe-1-repo-1
+    type: file
+    flags:
+      - pipe-1
+      - repo-1
+      - repo
+    pointer:
+      sourceName: https://raw.githubusercontent.com/harryi3t/sample/master/README.md
+    seed:
+      versionName: initial
+
+  - name: pipe-1-repo-2
+    type: file
+    flags:
+      - pipe-1
+      - repo-2
+      - repo
+    pointer:
+      sourceName: https://raw.githubusercontent.com/harryi3t/sample/master/README.md
+    seed:
+      versionName: initial
