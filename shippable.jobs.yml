@@ -1,23 +1,29 @@
 jobs:
-  - name: pipe-1-job-1
+  - name: pipe-1-job-1-dev
     type: runSh
     flags:
       - pipe-1
       - job-1
+      - pipe-1-dev
+      - job-1-dev
       - job
+      - dev
     steps:
-        - IN: pipe-1-repo-1
+        - IN: pipe-1-repo-1-dev
         - TASK:
             - script: sudo apt-get install -y jq
 
-  - name: pipe-1-job-2
+  - name: pipe-1-job-2-dev
     type: runSh
     flags:
       - pipe-1
       - job-2
+      - pipe-1-dev
+      - job-2-dev
       - job
+      - dev
     steps:
-        - IN: pipe-1-job-1
-        - OUT: pipe-1-repo-2
+        - IN: pipe-1-job-1-dev
+        - OUT: pipe-1-repo-2-dev
         - TASK:
             - script: sudo apt-get install -y jq
