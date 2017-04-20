@@ -10,6 +10,7 @@ jobs:
       - dev
     steps:
         - IN: pipe-1-repo-1-dev
+        - IN: 5134_runCI
         - TASK:
             - script: sudo apt-get install -y jq
 
