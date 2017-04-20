@@ -10,7 +10,6 @@ jobs:
       - dev
     steps:
         - IN: pipe-1-repo-1-dev
-        - IN: 5134_runCI
         - TASK:
             - script: sudo apt-get install -y jq
 
@@ -26,5 +25,19 @@ jobs:
     steps:
         - IN: pipe-1-job-1-dev
         - OUT: pipe-1-repo-2-dev
+        - TASK:
+            - script: sudo apt-get install -y jq
+
+  - name: 5134_runCI
+    type: runCI
+    flags:
+      - pipe-1
+      - pipe-1-dev
+      - job
+      - dev
+      - runCI
+    steps:
+        - IN: pipe-1-job-1-dev
+        - IN: pipe-1-repo-1-dev
         - TASK:
             - script: sudo apt-get install -y jq
